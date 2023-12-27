@@ -9,9 +9,6 @@ import Box from '@mui/joy/Box';
 import Textarea from '@mui/joy/Textarea';
 
 
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-
-
 
 
 import logo from './logo.png'; 
@@ -306,18 +303,6 @@ const FormComponent = () => {
 
   let nameVithApostrof = "Ім'я";
 
-  const theme = createTheme({
-    palette: {
-      ochre: {
-        main: '#E3D026',
-        light: '#E9DB5D',
-        dark: '#A29415',
-        contrastText: '#242105',
-      },
-    },
-  });
-
- 
 
 
   return (
