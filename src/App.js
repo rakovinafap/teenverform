@@ -15,6 +15,7 @@ import ReplyIcon from '@mui/icons-material/Reply';
 
 
 import logo from './logo.png'; 
+import logo2 from './logo2.png'; 
 
 
 const FormComponent = () => {
@@ -317,7 +318,7 @@ const FormComponent = () => {
       
        <Box style={{display: "flex", width: "100%", textAlign: "center", marginBottom: "20px", justifyContent: "center", alignItems: "center"}}>
        <img
-            src={logo}
+            src={logo2}
             alt="Логотип"
             style={{marginTop: "5px", position: 'absolute', top: '0', left: '50%', transform: 'translateX(-50%)', maxWidth: '400px', height: "100px", width: "100%"}} 
           
