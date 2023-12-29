@@ -8,6 +8,9 @@ import Button from '@mui/joy/Button';
 import Box from '@mui/joy/Box';
 import Textarea from '@mui/joy/Textarea';
 
+import ReplyIcon from '@mui/icons-material/Reply';
+
+
 
 
 
@@ -36,7 +39,7 @@ const FormComponent = () => {
     });
   };
 
-  const myURL = "https://script.google.com/macros/s/AKfycbwtrXieUnVWLc2EK7aSv0dvX7fMmPTs5D1c-1mhWgH7-1-4D1VGjIVcKH9NEax25INe/exec"
+  const myURL = "https://script.google.com/macros/s/AKfycbzNEFlxoPdxW1Q_yOwn1Z-ou8nU9htCengEDbJDvg3OuZqd8cUSzpHJbQsNWtedaPBi/exec"
 
 
   const [errors, setErrors] = useState({ surname: false, name: false, phone: false, gorod: false, sklad: false, index: false });
@@ -301,6 +304,10 @@ const FormComponent = () => {
     localStorage.setItem('price', value); // Сохраняем значение в localStorage
   };
 
+  const handleBackButton = () => {
+    setDeliverySelected(false);
+  }
+
   let nameVithApostrof = "Ім'я";
 
 
@@ -312,7 +319,7 @@ const FormComponent = () => {
        <img
             src={logo}
             alt="Логотип"
-            style={{ position: 'absolute', top: '0', left: '50%', transform: 'translateX(-50%)', maxWidth: '450px', height: "100px", width: "100%"}} 
+            style={{marginTop: "5px", position: 'absolute', top: '0', left: '50%', transform: 'translateX(-50%)', maxWidth: '400px', height: "100px", width: "100%"}} 
           
         />
        </Box>
@@ -367,7 +374,7 @@ const FormComponent = () => {
             }}
             >
               <p style={{ margin: '5px 0' }}>УКР ПОШТА</p>
-              <p style={{ margin: '5px 0', fontSize: '12px' }}>Тільки після повної оплати на картку</p>
+              <p style={{ margin: '5px 0', fontSize: '12px' }}>Тільки після повної оплати</p>
             </Button>
             <br/>
            
@@ -377,8 +384,24 @@ const FormComponent = () => {
 
         {deliverySelected ?  
         <form onSubmit={handleSubmit} style={{marginLeft: "5px", marginRight: "5px"}}>
-          <Typography variant='h1' component="h2" style={{fontSize: "20px", textAlign: "center", marginBottom: "20px"}}>Для замовлення заповніть дані</Typography>
         
+        <div 
+        style={{
+          display: "flex",
+          alignItems: "flex-start",
+          justifyContent: "space-between"
+        }}
+        >
+          <div style={{marginRight: "10px"}} >
+            <Button variant="outlined">
+              <ReplyIcon onClick={() => handleBackButton()}/>
+            </Button>
+          </div>
+         <div>
+            <Typography variant='h1' component="body1" style={{fontSize: "20px", textAlign: "center", marginBottom: "20px"}}>Для замовлення заповніть дані</Typography>
+          </div>
+        </div>
+
         <div style={{marginBottom: "10px"}}>
         <Typography variant='body1' component="label">
           Прізвище
@@ -444,7 +467,7 @@ const FormComponent = () => {
         </div>
         ) : <div>
          <Typography variant='body1' component="label">
-        Місто та відділення
+        Місто та відділення (або поштомат)
         </Typography>
         <Select
           value={selectedOption}
