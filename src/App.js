@@ -310,6 +310,7 @@ const FormComponent = () => {
   }
 
   let nameVithApostrof = "Ім'я";
+  let nameField = "";
 
 
 
